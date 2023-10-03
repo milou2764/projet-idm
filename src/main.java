@@ -433,7 +433,7 @@ public class main {
                                   break;
                     default:
           	}
-	    //operationTable[object.GetID()] = object;
+		operationTable.put(object.GetID(), object);
             }
 
 private static FunctionalChainInvolvment ExtractFunctionalChainInvolvment(String str, ArrayList<StorageMibField> StorageMibFieldsList, Hashtable<String, StorageMibField> table){
