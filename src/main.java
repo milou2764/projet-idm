@@ -411,24 +411,38 @@ public class main {
                 switch (beacon){
 
                     case OWNEDFUNCTIONALCHAININVOLVMENTS : System.out.println("OWNEDFUNCTIONALCHAININVOLVMENTS");
+                                                           FunctionalChainInvolvment functionalChainInvolvment = ExtractFonctionalChainInvolvment(str, storageMibFieldsList, table);
+                                                           //System.out.println("ID : " + fonctionalChainInvolvment.GetId());
                                                            break;
                     case OWNEDFUNCTIONS : System.out.println("OWNEDFUNCTIONS " + str);
                                           OwnedFunction ownedFunction = ExtractOwnedFunction ( str, storageMibFieldsList, table);
+                                          //System.out.println("ID : " + ownedFunction.GetId());
                                           break;
                     case OWNEDFUNCTIONALEXCHANGES : System.out.println("OWNEDFUNCTIONALEXCHANGES " + str);
-                                                    //OwnedFunctionExchange ownedFunctionExchange = ExtractOwnedFunctionExchange(
+                                                    FunctionalExchange functionalExchange = ExtractFunctionalExchange(str, storageMibFieldsList, table);
+                                                    //System.out.println("ID : " + functionalExchange.GetId()); 
                                                     break;
                     case OUTPUTS : System.out.println("OUTPUT" + str);
                                    Output output = ExtractOutput(str, storageMibFieldsList, table);
-                                   System.out.println("output ID : " +output.GetId());
+                                   System.out.println("ID : " +output.GetId());
                                    break;
                     case INPUTS : System.out.println("INPUTS" + str);
                                   Input input = ExtractInput(str, storageMibFieldsList, table);
-                                  System.out.println("input ID : " + input.GetId());
+                                  System.out.println("ID : " + input.GetId());
                                   break;
                     default:
                 }			  
             }
+
+private static FonctionalChainInvolvment ExtractFonctionalChainInvolvment(String str, ArrayList<StorageMibField> StorageMibFieldsList, Hashtable<String, StorageMibField> table){
+    return null;
+}
+
+private static FonctionalExchange ExtractFonctionalExchange(String str, ArrayList<StorageMibField> StorageMibFieldsList, Hashtable<String, StorageMibField> table){
+    return null;
+}
+
+
 private static Output ExtractOutput(String str, ArrayList<StorageMibField> StorageMibFieldsList, Hashtable<String, StorageMibField> table){
                
                 //  Claim id
