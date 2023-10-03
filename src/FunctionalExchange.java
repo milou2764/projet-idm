@@ -29,5 +29,4 @@ class FunctionalExchange extends StorageMibField{
     public void setTarget(FunctionalChainInvolvment target){
         this.source = target;
     }
-
 }

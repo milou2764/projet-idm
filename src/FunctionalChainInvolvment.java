@@ -1,6 +1,6 @@
 class FunctionalChainInvolvment extends StorageMibField {
     String summary, involved;
-	Object involved;
+	Object o_involved;
     
 
     public FunctionalChainInvolvment(String id,String summary, String involved){
