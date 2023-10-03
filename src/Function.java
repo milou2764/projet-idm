@@ -1,1 +1,1 @@
-class Function extends StorageMibFields {}
+class Function extends StorageMibField {}
