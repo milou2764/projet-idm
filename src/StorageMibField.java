@@ -73,13 +73,15 @@ public abstract class StorageMibField {
 		OWNEDCOMPONENTPORTSALLOCATIONS
 	}
 	
+
 	BeaconType typeOfbeacon;
 	String identifier;
 	
-	
 	/* Used to know the Id of a concrete class which extends StorageMibId */
 	/* Used to build the protobuf files                                   */
-	public abstract String GetId();
+	public String GetId(){
+		return identifier;
+	}
 	
 	/**
 	 * Comment transformation to be accepted by protofiles file compilers.
