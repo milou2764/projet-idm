@@ -411,8 +411,8 @@ public class main {
                 switch (beacon){
 
                     case OWNEDFUNCTIONALCHAININVOLVMENTS : System.out.println("OWNEDFUNCTIONALCHAININVOLVMENTS");
-                                                           FunctionalChainInvolvment functionalChainInvolvment = ExtractFonctionalChainInvolvment(str, storageMibFieldsList, table);
-                                                           //System.out.println("ID : " + fonctionalChainInvolvment.GetId());
+                                                           FunctionalChainInvolvment functionalChainInvolvment = ExtractFunctionalChainInvolvment(str, storageMibFieldsList, table);
+                                                           //System.out.println("ID : " + functionalChainInvolvment.GetId());
                                                            break;
                     case OWNEDFUNCTIONS : System.out.println("OWNEDFUNCTIONS " + str);
                                           OwnedFunction ownedFunction = ExtractOwnedFunction ( str, storageMibFieldsList, table);
@@ -434,11 +434,11 @@ public class main {
                 }			  
             }
 
-private static FonctionalChainInvolvment ExtractFonctionalChainInvolvment(String str, ArrayList<StorageMibField> StorageMibFieldsList, Hashtable<String, StorageMibField> table){
+private static FunctionalChainInvolvment ExtractFunctionalChainInvolvment(String str, ArrayList<StorageMibField> StorageMibFieldsList, Hashtable<String, StorageMibField> table){
     return null;
 }
 
-private static FonctionalExchange ExtractFonctionalExchange(String str, ArrayList<StorageMibField> StorageMibFieldsList, Hashtable<String, StorageMibField> table){
+private static FunctionalExchange ExtractFunctionalExchange(String str, ArrayList<StorageMibField> StorageMibFieldsList, Hashtable<String, StorageMibField> table){
     return null;
 }
 
