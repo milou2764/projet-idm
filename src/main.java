@@ -435,11 +435,60 @@ public class main {
             }
 
 private static FunctionalChainInvolvment ExtractFunctionalChainInvolvment(String str, ArrayList<StorageMibField> StorageMibFieldsList, Hashtable<String, StorageMibField> table){
-    return null;
+    
+    //  Claim id
+    int index_id = str.indexOf("id=") + 4;
+    int index_end_id = index_id + 40;
+    String id = (String) str.subSequence(index_id, index_end_id);
+
+    //  Claim summary
+    int index_summary = str.indexOf("id=") + 4;
+    String sub = str.subSequence(index_summary, str.length() - 1);
+    int index_end_summary = null; 
+    for (int i=0; i<str.length(); i++){
+        if (sub.charAt(i) == '\"'){
+            index_end_summary = index_summary + i;
+        }
+    }
+    
+    assert index_end_summary != null;
+    
+    String summary = (String) str.subSequence(index_summary, index_end_summary);
+
+    //  Claim involved
+    int index_involved = str.indexOf("involved=") + 9;
+    int index_end_involved = str.indexOf("/>") - 2;
+    String involved = (String) str.subSequence(index_involved, index_end_involved);
+
+    FunctionalChainInvolvment functionalChainInvolvment = new FunctionalChainInvolvment(id, summary, involved);
+
+    return functionalChainInvolvment;
 }
 
 private static FunctionalExchange ExtractFunctionalExchange(String str, ArrayList<StorageMibField> StorageMibFieldsList, Hashtable<String, StorageMibField> table){
-    return null;
+
+    //  Claim id
+    int index_id = str.indexOf("id=") + 4;
+    int index_end_id = index_id + 40;
+    String id = (String) str.subSequence(index_id, index_end_id);
+
+    //  Claim name
+    int index_name = str.indexOf("name=") + 6;
+    int index_end_name = str.indexOf("target=") - 3;
+    String name = (String) str.subSequence(index_name, index_end_name);
+
+    //  Claim target
+    int index_target = index_end_name + 8;
+    int index_end_target = index_target + 37;
+    String target = (String) str.subSequence(index_target, index_end_target);
+
+    //  Claim source
+    int index_source = str.indexOf("source=") + 8;
+    int index_source_end = index_source + 37;
+    String source = (String) str.subSequence(index_source, index_source_end);
+   
+    FunctionalExchange functionalExchange = new FunctionalExchange(id, name, source, target);
+    return functionalExchange;
 }
 
 
