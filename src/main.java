@@ -412,15 +412,15 @@ public class main {
 
                     case OWNEDFUNCTIONALCHAININVOLVMENTS : System.out.println("OWNEDFUNCTIONALCHAININVOLVMENTS");
                                                            FunctionalChainInvolvment functionalChainInvolvment = ExtractFunctionalChainInvolvment(str, storageMibFieldsList, table);
-                                                           //System.out.println("ID : " + functionalChainInvolvment.GetId());
+                                                           System.out.println("ID : " + functionalChainInvolvment.GetId());
                                                            break;
                     case OWNEDFUNCTIONS : System.out.println("OWNEDFUNCTIONS " + str);
                                           OwnedFunction ownedFunction = ExtractOwnedFunction ( str, storageMibFieldsList, table);
-                                          //System.out.println("ID : " + ownedFunction.GetId());
+                                          System.out.println("ID : " + ownedFunction.GetId());
                                           break;
                     case OWNEDFUNCTIONALEXCHANGES : System.out.println("OWNEDFUNCTIONALEXCHANGES " + str);
                                                     FunctionalExchange functionalExchange = ExtractFunctionalExchange(str, storageMibFieldsList, table);
-                                                    //System.out.println("ID : " + functionalExchange.GetId()); 
+                                                    System.out.println("ID : " + functionalExchange.GetId()); 
                                                     break;
                     case OUTPUTS : System.out.println("OUTPUT" + str);
                                    Output output = ExtractOutput(str, storageMibFieldsList, table);
@@ -443,15 +443,15 @@ private static FunctionalChainInvolvment ExtractFunctionalChainInvolvment(String
 
     //  Claim summary
     int index_summary = str.indexOf("id=") + 4;
-    String sub = str.subSequence(index_summary, str.length() - 1);
-    int index_end_summary = null; 
+    String sub = (String) str.subSequence(index_summary, str.length() - 1);
+    int index_end_summary = -1; 
     for (int i=0; i<str.length(); i++){
         if (sub.charAt(i) == '\"'){
             index_end_summary = index_summary + i;
         }
     }
     
-    assert index_end_summary != null;
+    assert index_end_summary != 1;
     
     String summary = (String) str.subSequence(index_summary, index_end_summary);
 
